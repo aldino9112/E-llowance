@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html style="background: url(img/Background.png); background-size: cover;">
+<head>
+    <title>E-llowance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img class="center" src="img/Logo.png" width="600px">
+    <h1 class="inputBalance">Input your input balance</h1>
+    <form>
+        <input type="number" id="baseBalance" class="inputCenter">
+        <br>
+        <input id="mainButton" type="button" value="CONFIRM" class="inputCenter confirm"> 
+    </form>
+<script type="text/javascript" >
+    localStorage.clear()
+    document.getElementById("mainButton").onclick = function () {
+    var balanceAwal = 0
+    balanceAwal += document.getElementById('baseBalance').value;
+    localStorage.setItem("balanceName", balanceAwal)
+    location.href = "main.html"
+}
+</script>
+</body>
+</html>

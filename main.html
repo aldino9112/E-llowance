@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html style="background: url(img/backgroundMain.png); background-size: cover;">
+<head>
+    <title>E-llowance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<h1 id="currentBalance" class="inputCenter mainBalance"></h1>
+<input id="foodButton" class="pencetan" type="button" value="food">
+<input id="transportButton" class="pencetan" type="button" value="food">
+<input id="billButton" class="pencetan" type="button" value="food">
+<input id="etcButton" class="pencetan" type="button" value="food">
+
+<script>
+    baseBalance = localStorage.getItem("balanceName")
+    baseBalance = Number(baseBalance)
+    console.log(typeof baseBalance)
+    console.log(baseBalance)
+    document.getElementById("currentBalance").innerHTML = baseBalance
+    var currentBalance = 0
+    currentBalance += baseBalance
+    localStorage.setItem("currentBalance", currentBalance)
+
+    
+</script>
+
+<script>
+    document.getElementById("foodButton").onclick = function () {
+    location.href = "food.html"
+    }
+    document.getElementById("transportButton").onclick = function () {
+    location.href = "transport.html"
+    }
+    document.getElementById("billButton").onclick = function () {
+    location.href = "bill.html"
+    }
+    document.getElementById("etcButton").onclick = function () {
+    location.href = "etc.html"
+    }
+</script>
+
+</body>
+
+</html>

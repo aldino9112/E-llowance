@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html style="background: url(img/billbackground.png); background-size: cover;">
+<head>
+    <title>E-llowance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 class="inputBalance" style="margin-top: 550px;">Add balance</h1>
+    <form>
+        <input type="number" id="addBalance" class="inputCenter">
+        <br>
+        <input id="mainButton" type="button" value="CONFIRM" class="inputCenter confirm"> 
+    </form>
+<script type="text/javascript" >
+baseBalance = Number(localStorage.getItem("balanceName"))
+document.getElementById("mainButton").onclick = function () {
+    var balanceBill = 0
+    balanceBill += Number(document.getElementById('addBalance').value);
+    localStorage.setItem("balanceBill", balanceBill)
+    location.href = "main2.html"
+}
+</script>
+</body>
+</html>

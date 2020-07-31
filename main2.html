@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html style="background: url(img/backgroundMain2.png); background-size: cover;">
+<head>
+    <title>E-llowance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<h1 id="currentBalance" class="inputCenter mainBalance"></h1>
+
+
+
+<input id="foodButton" class="pencetan" type="button" value="food">
+<input id="transportButton" class="pencetan" type="button" value="food">
+<input id="billButton" class="pencetan" type="button" value="food">
+<input id="etcButton" class="pencetan" type="button" value="food">
+
+<h1 id="balanceFood" class="barang"></h1>
+<h1 id="balanceTransport" class="barang"></h1>
+<h1 id="balanceBill" class="barang"></h1>
+<h1 id="balanceEtc" class="barang"></h1>
+
+
+
+<script>
+    var currentBalance = 0
+    var foodBalance = 0
+    var transportBalance = 0
+    var billBalance = 0
+    var etcBalance = 0
+    currentBalance = Number(localStorage.getItem("currentBalance"))
+    var foodBalance = Number(localStorage.getItem("balanceFood"))
+    var transportBalance = Number(localStorage.getItem("balanceTransport"))
+    var billBalance = Number(localStorage.getItem("balanceBill"))
+    var etcBalance = Number(localStorage.getItem("balanceEtc"))
+    document.getElementById("currentBalance").innerHTML = currentBalance - foodBalance - transportBalance - billBalance - etcBalance
+    document.getElementById("balanceFood").innerHTML = foodBalance
+    document.getElementById("balanceTransport").innerHTML = transportBalance
+    document.getElementById("balanceBill").innerHTML = billBalance
+    document.getElementById("balanceEtc").innerHTML = etcBalance
+
+    document.getElementById("foodButton").onclick = function () {
+    localStorage.setItem("balanceFood",foodBalance)
+    localStorage.setItem("currentBalance", currentBalance)
+    location.href = "food2.html"
+    }
+    document.getElementById("transportButton").onclick = function () {
+    location.href = "transport2.html"
+    localStorage.setItem("balanceTransport",transportBalance)
+    localStorage.setItem("currentBalance", currentBalance)
+    }
+    document.getElementById("billButton").onclick = function () {
+    location.href = "bill2.html"
+    }
+    document.getElementById("etcButton").onclick = function () {
+    location.href = "etc2.html"
+    }
+</script>
+
+</body>
+
+</html>
